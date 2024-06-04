@@ -3,7 +3,9 @@ import requests
 # Create your models here.
 
 class Weather(models.Model):
-    sity = models.CharField(max_length=50)
+    city = models.CharField(max_length=50)
+    country = models.CharField(max_length=50)
+    temperature = models.FloatField(blank=False)
 
 
     def __str__(self):

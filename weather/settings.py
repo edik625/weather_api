@@ -125,4 +125,4 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-weather = "c8b49cf6d5f9afe3b08307e6b88f185d"
+# weather_api = "c8b49cf6d5f9afe3b08307e6b88f185d"

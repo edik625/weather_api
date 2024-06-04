@@ -1,5 +1,5 @@
 import requests
-from django.conf import settings
+# from django.conf import settings
 
 
 API_KEY = "c8b49cf6d5f9afe3b08307e6b88f185d"
@@ -7,7 +7,7 @@ API_KEY = "c8b49cf6d5f9afe3b08307e6b88f185d"
 
 
 def weather_api(CITY):
-    API_KEY = settings.weather
+    # API_KEY = settings.weather_api
     
     URL = f'http://api.openweathermap.org/data/2.5/weather?q={CITY}&appid={API_KEY}'
 
@@ -15,5 +15,7 @@ def weather_api(CITY):
     # dat = response.json()
     if response.status_code == 200:
         return response.json()
+    else:
+        return None
     # print(dat["weather"][0]["description"])
     # print(dat)
