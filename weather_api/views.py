@@ -14,18 +14,17 @@ class WeatherViewset(viewsets.ModelViewSet):
     def create(self, request, *args, **kwargs):
         city = request.data.get('city')
         country = request.data.get('country')
+        description = request.data.get('description')
         
         weather_data = weather_api(city)
-        print(weather_data)
         
         if weather_data:
             data = {
                 'city': city,
                 'country': country,
-                'temperature': weather_data['main']['temp']
+                'temperature': weather_data['main']['temp'],
+                'description': weather_data['weather'][0]['description']
             }
-            
-            print(data)
             
             serializer = self.get_serializer(data=data)
             serializer.is_valid(raise_exception=True)

@@ -4,8 +4,8 @@ from rest_framework.routers import DefaultRouter
 
 
 router = DefaultRouter()
-router.register(r"", WeatherViewset)
+router.register(r"weather", WeatherViewset)
 
 urlpatterns = [
-    path('weather/<str:city>/', include(router.urls))
+    path('', include(router.urls))
 ]
