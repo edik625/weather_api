@@ -6,6 +6,7 @@ class Weather(models.Model):
     city = models.CharField(max_length=50)
     country = models.CharField(max_length=50)
     description = models.CharField(max_length=50,blank=False)
+    wind = models.CharField(max_length=50,blank=True)
     temperature = models.FloatField(blank=False)
 
 
